@@ -376,7 +376,8 @@ class _ArrayLike(Generic[_S]):
 # numpy's scalar hierarchy (http://docs.scipy.org/doc/numpy/reference/arrays.scalars.html#scalars)
 #
 
-class generic(_ArrayLike[_S], Generic[_S]): ...
+class generic(_ArrayLike[_S], Generic[_S]):
+    def __init__(self, other: Union[generic[_U], int, bool, float] = ...) -> None: ... # add casting for all scalars
 class bool_(generic[bool]): ...
 bool8 = bool_
 class object_(generic[Any]): ...
